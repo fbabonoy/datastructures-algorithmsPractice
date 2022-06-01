@@ -14,6 +14,7 @@ class LinkList {
     private var head: Node?
         
     func addFront(_ data: Int) {
+        
     }
 
     func getFirst() -> Int? {
