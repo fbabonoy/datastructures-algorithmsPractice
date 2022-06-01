@@ -1,5 +1,6 @@
 import UIKit
 
+
 /*
  We are given a string S representing a phone number, which we would like to reformat. String S consists of N characters: digits, spaces, and/or dashes. It contains at least two digits.
  
@@ -24,7 +25,32 @@ import UIKit
  */
 func solution(_ S : String) -> String {
     // do your work here
-    return ""
+    var newString = ""
+    var counter = 0
+    for (i, value) in S.enumerated() {
+        switch value {
+            case "0","1","2","3","4","5","6","7","8","9":
+                newString = "\(newString)\(value)"
+                counter += 1
+            default:
+                continue
+        }
+        if counter % 3 == 0 && i != S.count - 1 {
+            newString += "-"
+            
+        }
+        
+    }
+    
+    var reformat = Array(newString)
+
+    var getSecondToLast = reformat[reformat.count - 2]
+    print(getSecondToLast)
+    if getSecondToLast == "-" {
+        reformat[reformat.count - 2] = reformat[reformat.count - 3]
+        reformat[reformat.count - 3] = getSecondToLast
+    }
+    return String(reformat)
 }
 
 solution("123456789")           // 123-456-789

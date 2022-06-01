@@ -18,7 +18,14 @@ import Foundation
 
 public func solution(_ A : [String], _ B : [String], _ P : String) -> String {
     // do your work here
-    return ""
+    var contact = [String]()
+    for (index, value) in B.enumerated() {
+        if value.contains(P) {
+            contact.append(A[index])
+        }
+    }
+    contact.sort()
+    return contact.isEmpty ? "NO CONTACT" : contact[0]
 }
 
 let A = ["pim", "pom"]
@@ -39,4 +46,4 @@ public func solutionDict(_ A : [String], _ B : [String], _ P : String) -> String
 }
 
 
-
+ 
