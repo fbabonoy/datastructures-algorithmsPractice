@@ -14,14 +14,15 @@ class LinkList {
     private var head: Node?
         
     func addFront(_ data: Int) {
-        
+        head = Node(data, head)
     }
 
     func getFirst() -> Int? {
-        return 0
+        head?.data
     }
 
     func addBack(_ data: Int) {
+        
     }
 
     func getLast() -> Int? {
@@ -64,4 +65,9 @@ class LinkList {
 }
 
 let linkedList = LinkList()
+linkedList.addFront(19)
+linkedList.addFront(9)
 
+linkedList.printLinkedList()
+
+linkedList.getFirst()
